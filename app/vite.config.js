@@ -9,5 +9,14 @@ export default defineConfig({
     ],
     build: {
         target: "ES2022"
+    },
+    server: {
+        headers: {
+            "Cross-Origin-Embedder-Policy": "require-corp", // for shared WebAssembly.Memory
+            "Cross-Origin-Opener-Policy": "same-origin" // see https://web.dev/articles/coop-coep
+        },
+        fs: {
+            allow: [".."]
+        }
     }
 });

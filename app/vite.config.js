@@ -1,0 +1,18 @@
+import { defineConfig } from "vite";
+import { sveltekit } from "@sveltejs/kit/vite";
+import tailwindcss from "@tailwindcss/vite";
+
+export default defineConfig({
+    plugins: [
+        sveltekit(),
+        tailwindcss()
+    ],
+    build: {
+        target: "ES2022"
+    },
+    server: {
+        fs: {
+            allow: [".."]
+        }
+    }
+});

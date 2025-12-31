@@ -1,0 +1,48 @@
+{
+    "files": {
+        "includes": ["src/**"]
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "suspicious": {
+                "noConsole": "warn"
+            }
+        }
+    },
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4
+    },
+    "html": {
+        "experimentalFullSupportEnabled": true,
+        "formatter": {
+            "enabled": true,
+            "indentScriptAndStyle": true
+        }
+    },
+    "css": {
+        "parser": {
+            "tailwindDirectives": true
+        }
+    },
+    "overrides": [
+        {
+            "includes": ["**/*.svelte"],
+            "linter": {
+                "rules": {
+                    "style": {
+                        "useConst": "off",
+                        "useImportType": "off"
+                    },
+                    "correctness": {
+                        "noUnusedVariables": "off",
+                        "noUnusedImports": "off"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -42,6 +42,9 @@ globalThis.loadLinkerCode = (linkerCode) => {
         // export class Foo -> globalThis.Foo = class Foo
         .replace(/^export class (\w+)/gm, "globalThis.$1 = class $1")
 
+        // export function foo -> globalThis.foo = function foo
+        .replace(/^export function (\w+)/gm, "globalThis.$1 = function $1")
+
         // export { initSync } -> globalThis.initSync = initSync
         .replace(
             /^export \{ initSync \};?/gm,
